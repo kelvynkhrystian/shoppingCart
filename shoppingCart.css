@@ -1,0 +1,31 @@
+html,body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Solway', serif;
+  display: grid;
+  grid-template-areas:
+  "h h"
+  "m a";
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: 10vh 90vh;
+}
+
+header {
+  background-color: #0e0f10;
+  color: #15a874;
+  grid-area: h;
+}
+
+main {
+  background-color: #e4e4e4;
+  grid-area: m;
+}
+
+aside {
+  background-color: #1d1d22;
+  grid-area: a;
+}
