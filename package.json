@@ -1,0 +1,23 @@
+{
+  "name": "shoppingcart",
+  "version": "1.0.0",
+  "description": "Carrinho de Compras",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelvynkhrystian/shoppingCart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelvynkhrystian/shoppingCart/issues"
+  },
+  "homepage": "https://github.com/kelvynkhrystian/shoppingCart#readme",
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-trybe-fundamentals": "^1.1.1"
+  }
+}
