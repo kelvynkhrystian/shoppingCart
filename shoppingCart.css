@@ -15,17 +15,23 @@ body {
 }
 
 header {
+  align-items: center;
   background-color: #0e0f10;
+  display: grid;
   color: #15a874;
   grid-area: h;
 }
 
 main {
+  align-items: baseline;
   background-color: #e4e4e4;
+  display: grid;
   grid-area: m;
 }
 
 aside {
+  justify-content: center;
   background-color: #1d1d22;
+  display: grid;
   grid-area: a;
 }
