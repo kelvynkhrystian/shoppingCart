@@ -7,6 +7,7 @@ html,body {
 body {
   font-family: 'Solway', serif;
   display: grid;
+  font-size: large;
   grid-template-areas:
   "h h"
   "m a";
@@ -18,8 +19,41 @@ header {
   align-items: center;
   background-color: #0e0f10;
   display: grid;
+  justify-content: center;
   color: #15a874;
   grid-area: h;
+  grid-template-areas: "leftH rigthH";
+  grid-template-columns: 5fr 2fr;
+
+}
+
+#left-header {
+  align-items: center;
+  display: grid;
+  justify-content: space-between;
+  grid-area: leftH;
+  grid-template-areas: "text tri";
+}
+
+#rigth-header {
+  align-items: center;
+  background-color: #15a874;
+  color: #fff;
+  display: grid;
+  grid-area: rigthH;
+  height: 100%;
+}
+
+p {
+  margin-left: 20px;
+}
+
+#triangulo {
+  width: 0; 
+  height: 0; 
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent; 
+  border-right:15px solid #15a874;
 }
 
 main {
@@ -30,8 +64,29 @@ main {
 }
 
 aside {
+  align-items:baseline;
+  color: #fff;
   justify-content: center;
   background-color: #1d1d22;
   display: grid;
   grid-area: a;
+  grid-template-areas:
+  "produtos"
+  "subtotal"
+  "button";
+  grid-template-rows: 70vh 10vh 10vh;
 }
+
+#itens-box {
+  align-items: center;
+  grid-area: produtos;
+  margin-top: 20px;
+  width: 100%;
+}
+#subtotal {
+  grid-area: subtotal;
+}
+#esvaziar {
+  grid-area: button;
+}
+
