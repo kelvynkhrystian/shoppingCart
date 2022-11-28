@@ -1,9 +1,10 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
-    "extends": "trybe-fundamentals",
+    "extends": "eslint:recommended",
     "overrides": [
     ],
     "parserOptions": {
