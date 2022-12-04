@@ -38,7 +38,7 @@ const createProducts = ({thumbnail,title, price}) => {
   itemImg.src = thumbnail;
   itemImg.alt = 'produtos';
   itemName.innerText = title;
-  itemPrice.innerText = price;
+  itemPrice.innerText = `R$ ${price}`;
   itemBox.classList.add('itemBox');
 
   itemBox.appendChild(itemImg);
