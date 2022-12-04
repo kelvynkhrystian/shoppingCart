@@ -89,7 +89,7 @@ const renderItemCart = ({thumbnail,title, price}) => {
   
   cartImg.src = thumbnail;
   cartImg.alt = 'produtos';
-  cartName.innerText = title.substring(0,60);
+  cartName.innerText = title.substring(0,30);
   cartPrice.innerText = `R$ ${price}`;
   cartBtn.innerText = 'X';
   cartBox.classList.add('itemCart');
