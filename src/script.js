@@ -56,18 +56,18 @@ const createProducts = ({thumbnail,title, price, id}) => {
 }
 
 
-const countItens = async () => {
+const countItens = () => {
   const totalAtual = document.getElementsByClassName('itemCart').length
   const countCard = document.getElementById('countCart');
-  countCard.innerHTML = `${totalAtual}`
+  countCard.innerHTML = `${totalAtual+1}`
+  console.log(totalAtual);
 }
-
-countItens();
 
 const addEvent = (ev) => {
   const element = ev.target
   const item = element.parentElement;
   getProductsById(item.id)
+  countItens();
 }
 
 // requisição para pegar o elemento pelo id que foi passado por um evento de click do btn Add cart
@@ -93,7 +93,7 @@ const renderItemCart = ({thumbnail,title, price}) => {
   cartName.innerText = title;
   cartPrice.innerText = `R$ ${price}`;
   cartBtn.innerText = 'Remover item';
-  cartBox.classList.add('cartItem');
+  cartBox.classList.add('itemCart');
   // cartBtn.onclick = remEvent;
 
   cartBox.appendChild(cartImg);
