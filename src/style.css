@@ -164,3 +164,7 @@ button:active {
   justify-content: center;
   width: 90%;
 }
+
+.itemCart {
+  display: flex;
+}

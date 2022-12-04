@@ -92,9 +92,9 @@ const renderItemCart = ({thumbnail,title, price}) => {
   cartImg.alt = 'produtos';
   cartName.innerText = title;
   cartPrice.innerText = `R$ ${price}`;
-  cartBtn.innerText = 'Remover item';
+  cartBtn.innerText = 'X';
   cartBox.classList.add('itemCart');
-  // cartBtn.onclick = remEvent;
+  cartBtn.onclick = remEvent;
 
   cartBox.appendChild(cartImg);
   cartDesc.appendChild(cartName);
@@ -102,4 +102,10 @@ const renderItemCart = ({thumbnail,title, price}) => {
   cartBox.appendChild(cartDesc);
   cartBox.appendChild(cartBtn);
   cart.appendChild(cartBox);
+}
+
+const remEvent = (ev) => {
+  const element = ev.target
+  const item = element.parentElement;
+  item.remove();
 }
