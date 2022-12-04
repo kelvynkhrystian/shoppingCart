@@ -59,7 +59,7 @@ const createProducts = ({thumbnail,title, price, id}) => {
 const countItens = () => {
   const totalAtual = document.getElementsByClassName('itemCart').length
   const countCard = document.getElementById('countCart');
-  countCard.innerHTML = `${totalAtual+1}`
+  countCard.innerHTML = `${totalAtual}`
   console.log(totalAtual);
 }
 
