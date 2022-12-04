@@ -108,4 +108,5 @@ const remEvent = (ev) => {
   const element = ev.target
   const item = element.parentElement;
   item.remove();
+  countItens();
 }
