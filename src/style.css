@@ -169,3 +169,14 @@ button:active {
 .itemCart {
   display: flex;
 }
+
+@media (min-width:900px) {
+  .quin {
+    width: 70%;
+  }
+  
+  .oit {
+    width: 30%;
+  }
+
+}
