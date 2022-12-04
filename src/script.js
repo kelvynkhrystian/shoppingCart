@@ -52,3 +52,18 @@ const createProducts = ({thumbnail,title, price}) => {
   list.appendChild(itemBox);
 }
 
+
+const countItens = async () => {
+  // const numbers = [1, 32, 44, 2, 3];
+  // const sumNumbers =  (acc, curr) => acc + curr;
+  // const totalSum = numbers.reduce(sumNumbers, 0);
+
+  const totalAtual = document.getElementsByClassName('itemCart').length
+  
+  const countCard = document.getElementById('countCart');
+  countCard.innerHTML = `${totalAtual}`
+  
+  // return totalSum;
+}
+
+countItens();
