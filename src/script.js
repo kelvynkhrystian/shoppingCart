@@ -33,17 +33,22 @@ const createProducts = ({thumbnail,title, price}) => {
   const itemImg = document.createElement('img')
   const itemName = document.createElement('p')
   const itemPrice = document.createElement('span')
+  const itemBtn = document.createElement('button')
 
   
   itemImg.src = thumbnail;
   itemImg.alt = 'produtos';
   itemName.innerText = title;
   itemPrice.innerText = `R$ ${price}`;
+  itemBtn.innerText = 'Add Cart';
   itemBox.classList.add('itemBox');
+  itemBtn.classList.add('itemBtn');
+  
 
   itemBox.appendChild(itemImg);
   itemBox.appendChild(itemName);
   itemBox.appendChild(itemPrice);
+  itemBox.appendChild(itemBtn);
   list.appendChild(itemBox);
 }
 

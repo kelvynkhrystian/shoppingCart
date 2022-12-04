@@ -150,3 +150,12 @@ button:active {
 .itemBox > p {
   font-size: x-small;
 }
+
+.itemBtn {
+  align-items: center;
+  text-align: center;
+  background-color: #15a874;
+  height: 30px;
+  padding: 0;
+  width: 100%;
+}
