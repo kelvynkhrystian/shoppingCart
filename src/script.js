@@ -117,3 +117,19 @@ const remEvent = (ev) => {
   item.remove();
   countItens();
 }
+
+// limpar carrrinho
+const clearCart = () => {
+  const clear = document.getElementById('esvaziar')
+  clear.addEventListener('click', () => {
+  const cart = document.querySelectorAll('.itemCart');
+  cart.forEach((item) => item.remove());
+});
+}
+
+clearCart();
+
+window.onload = () => {
+  
+};
+
