@@ -40,7 +40,7 @@ const createProducts = ({thumbnail,title, price, id}) => {
   
   itemImg.src = thumbnail;
   itemImg.alt = 'produtos';
-  itemName.innerText = title;
+  itemName.innerText = title.substring(0,100);
   itemPrice.innerText = `R$ ${price}`;
   itemBtn.innerText = 'Add Cart';
   itemBox.classList.add('itemBox');
@@ -89,7 +89,7 @@ const renderItemCart = ({thumbnail,title, price}) => {
   
   cartImg.src = thumbnail;
   cartImg.alt = 'produtos';
-  cartName.innerText = title;
+  cartName.innerText = title.substring(0,60);
   cartPrice.innerText = `R$ ${price}`;
   cartBtn.innerText = 'X';
   cartBox.classList.add('itemCart');
