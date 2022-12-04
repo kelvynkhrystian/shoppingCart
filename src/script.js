@@ -75,5 +75,31 @@ const getProductsById = async (id) => {
   const url = `https://api.mercadolibre.com/items/${id}`
   const result = await fetch(url);
   const data = await result.json();
-  return data;
+  renderItemCart(data)
+}
+
+const renderItemCart = ({thumbnail,title, price}) => {
+
+  const cart = document.getElementById('itensCartBox');
+  const cartDesc = document.createElement('div')
+  const cartBox = document.createElement('section')
+  const cartImg = document.createElement('img')
+  const cartName = document.createElement('p')
+  const cartPrice = document.createElement('span')
+  const cartBtn = document.createElement('button')
+  
+  cartImg.src = thumbnail;
+  cartImg.alt = 'produtos';
+  cartName.innerText = title;
+  cartPrice.innerText = `R$ ${price}`;
+  cartBtn.innerText = 'Remover item';
+  cartBox.classList.add('cartItem');
+  // cartBtn.onclick = remEvent;
+
+  cartBox.appendChild(cartImg);
+  cartDesc.appendChild(cartName);
+  cartDesc.appendChild(cartPrice);
+  cartBox.appendChild(cartDesc);
+  cartBox.appendChild(cartBtn);
+  cart.appendChild(cartBox);
 }
