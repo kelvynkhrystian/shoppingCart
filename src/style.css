@@ -20,6 +20,10 @@ header {
   width: 100%;
 }
 
+#header-text {
+  margin-left: 10px;
+}
+
 #left-header {
   align-items: center;
   display: flex;
