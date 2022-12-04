@@ -3,7 +3,7 @@ const menu = () => {
   const btnCart = document.getElementById('rigth-header');
   const aside = document.getElementById('cart-box');
   const article = document.getElementById('produts-box');
-    
+
   btnCart.addEventListener('click', () => {
     aside.classList.toggle("oit");
     article.classList.toggle("quin");
@@ -12,15 +12,17 @@ const menu = () => {
 
 menu();
 
-const getProducts = async (computador) => {
-  const url = `https://api.mercadolibre.com/sites/MLB/search?q=${computador}`
+// faz a requisição principal da api
+const getProducts = async () => {
+  const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
   const result = await fetch(url);
   const data = await result.json();
   ajustProducts(data);
 };
 
-getProducts('computador');
+getProducts();
 
+// recebe dados da api para redirecionar a informação de cada elemento para a renderização única na página
 const ajustProducts = (data) => {
   const itens = data.results;
   itens.forEach(element => {
@@ -28,6 +30,7 @@ const ajustProducts = (data) => {
   });
 }
 
+// renderiza itens no carrinho puxando dados da api
 const createProducts = ({thumbnail,title, price, id}) => {
 
   const list = document.getElementById('produts-box');
@@ -37,7 +40,7 @@ const createProducts = ({thumbnail,title, price, id}) => {
   const itemPrice = document.createElement('span')
   const itemBtn = document.createElement('button')
 
-  
+
   itemImg.src = thumbnail;
   itemImg.alt = 'produtos';
   itemName.innerText = title.substring(0,100);
@@ -55,7 +58,7 @@ const createProducts = ({thumbnail,title, price, id}) => {
   list.appendChild(itemBox);
 }
 
-
+// contador de produtos no carrinho
 const countItens = () => {
   const totalAtual = document.getElementsByClassName('itemCart').length
   const countCard = document.getElementById('countCart');
@@ -63,6 +66,7 @@ const countItens = () => {
   countCard.innerHTML = `${atual}`
 }
 
+// captura o elemento clickado e redireciona para renderizar o item no carrinho
 const addEvent = (ev) => {
   const element = ev.target
   const item = element.parentElement;
@@ -77,6 +81,7 @@ const getProductsById = async (id) => {
   renderItemCart(data)
 }
 
+// renderiza os itens do carrinho
 const renderItemCart = ({thumbnail,title, price}) => {
 
   const cart = document.getElementById('itensCartBox');
@@ -86,7 +91,7 @@ const renderItemCart = ({thumbnail,title, price}) => {
   const cartName = document.createElement('p')
   const cartPrice = document.createElement('span')
   const cartBtn = document.createElement('button')
-  
+
   cartImg.src = thumbnail;
   cartImg.alt = 'produtos';
   cartName.innerText = title.substring(0,30);
@@ -105,6 +110,7 @@ const renderItemCart = ({thumbnail,title, price}) => {
   countItens();
 }
 
+// remove itens no carrinho
 const remEvent = (ev) => {
   const element = ev.target
   const item = element.parentElement;
