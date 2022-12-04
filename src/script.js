@@ -122,9 +122,10 @@ const remEvent = (ev) => {
 const clearCart = () => {
   const clear = document.getElementById('esvaziar')
   clear.addEventListener('click', () => {
-  const cart = document.querySelectorAll('.itemCart');
-  cart.forEach((item) => item.remove());
-});
+    const cart = document.querySelectorAll('.itemCart');
+    cart.forEach((item) => item.remove());
+    countItens();
+  });
 }
 
 clearCart();
