@@ -67,5 +67,13 @@ countItens();
 const addEvent = (ev) => {
   const element = ev.target
   const item = element.parentElement;
-  console.log(item);
+  getProductsById(item.id)
+}
+
+// requisição para pegar o elemento pelo id que foi passado por um evento de click do btn Add cart
+const getProductsById = async (id) => {
+  const url = `https://api.mercadolibre.com/items/${id}`
+  const result = await fetch(url);
+  const data = await result.json();
+  return data;
 }
