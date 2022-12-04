@@ -28,20 +28,19 @@ const ajustProducts = (data) => {
 
 const createProducts = ({thumbnail,title, price}) => {
 
-  console.log(thumbnail);
-
   const list = document.getElementById('produts-box');
   const itemBox = document.createElement('section')
   const itemImg = document.createElement('img')
   const itemName = document.createElement('p')
-  const itemPrice = document.createElement('p')
+  const itemPrice = document.createElement('span')
 
   
   itemImg.src = thumbnail;
   itemImg.alt = 'produtos';
   itemName.innerText = title;
   itemPrice.innerText = price;
-  
+  itemBox.classList.add('itemBox');
+
   itemBox.appendChild(itemImg);
   itemBox.appendChild(itemName);
   itemBox.appendChild(itemPrice);
