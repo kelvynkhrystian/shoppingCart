@@ -156,3 +156,11 @@ button:active {
   padding: 0;
   width: 100%;
 }
+
+#itensCartBox {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}

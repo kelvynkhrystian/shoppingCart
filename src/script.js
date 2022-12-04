@@ -23,10 +23,12 @@ getProducts('computador');
 
 const ajustProducts = (data) => {
   const itens = data.results;
-  itens.forEach(element => createProducts(element));
+  itens.forEach(element => {
+    createProducts(element);
+  });
 }
 
-const createProducts = ({thumbnail,title, price}) => {
+const createProducts = ({thumbnail,title, price, id}) => {
 
   const list = document.getElementById('produts-box');
   const itemBox = document.createElement('section')
@@ -42,8 +44,9 @@ const createProducts = ({thumbnail,title, price}) => {
   itemPrice.innerText = `R$ ${price}`;
   itemBtn.innerText = 'Add Cart';
   itemBox.classList.add('itemBox');
+  itemBox.id = id;
   itemBtn.classList.add('itemBtn');
-  
+  itemBtn.onclick = addEvent;
 
   itemBox.appendChild(itemImg);
   itemBox.appendChild(itemName);
@@ -60,3 +63,9 @@ const countItens = async () => {
 }
 
 countItens();
+
+const addEvent = (ev) => {
+  const element = ev.target
+  const item = element.parentElement;
+  console.log(item);
+}
