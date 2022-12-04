@@ -17,6 +17,7 @@ header {
   color: #15a874;
   display: flex;
   justify-content: center;
+  position: fixed;
   width: 100%;
 }
 
@@ -68,7 +69,7 @@ article {
   justify-content: center;
   flex-wrap: wrap;
   transition: 1s;
-  padding-top: 10px;
+  padding-top: 80px;
   width: 100%;
 }
 
