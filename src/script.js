@@ -78,11 +78,11 @@ const getProductsById = async (id) => {
   const url = `https://api.mercadolibre.com/items/${id}`
   const result = await fetch(url);
   const data = await result.json();
-  renderItemCart(data)
+  renderItemCart(data);
 }
 
 // renderiza os itens do carrinho
-const renderItemCart = ({thumbnail,title, price}) => {
+const renderItemCart = ({thumbnail,title, price, id}) => {
 
   const cart = document.getElementById('itensCartBox');
   const cartDesc = document.createElement('div')
@@ -95,7 +95,10 @@ const renderItemCart = ({thumbnail,title, price}) => {
   cartImg.src = thumbnail;
   cartImg.alt = 'produtos';
   cartName.innerText = title.substring(0,30);
+  cartBox.id = id;
   cartPrice.innerText = `R$ ${price}`;
+  cartPrice.id = price;
+  cartPrice.classList.add('price');
   cartBtn.innerText = 'X';
   cartBox.classList.add('itemCart');
   cartBtn.onclick = remEvent;
@@ -108,6 +111,7 @@ const renderItemCart = ({thumbnail,title, price}) => {
   cart.appendChild(cartBox);
 
   countItens();
+  countPrice()
 }
 
 // remove itens no carrinho
@@ -116,6 +120,7 @@ const remEvent = (ev) => {
   const item = element.parentElement;
   item.remove();
   countItens();
+  countPrice()
 }
 
 // limpar carrrinho
@@ -129,6 +134,18 @@ const clearCart = () => {
 }
 
 clearCart();
+
+const countPrice = async () => {
+  const itens = document.querySelectorAll('.price');
+  const values = [];
+  itens.forEach((element) => values.push(parseInt(element.id)));
+  const total = values.reduce((arr,curr) => arr + curr)
+  console.log(total);
+  const subtotal = document.getElementById('subtotal-value');
+  subtotal.innerText = total;
+}
+
+
 
 window.onload = () => {
   
