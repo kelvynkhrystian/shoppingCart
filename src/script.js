@@ -130,6 +130,8 @@ const clearCart = () => {
     const cart = document.querySelectorAll('.itemCart');
     cart.forEach((item) => item.remove());
     countItens();
+    const total = document.getElementById('subtotal-value');
+    total.innerText =` 0`;
   });
 }
 
@@ -139,10 +141,10 @@ const countPrice = async () => {
   const itens = document.querySelectorAll('.price');
   const values = [];
   itens.forEach((element) => values.push(parseInt(element.id)));
-  const total = values.reduce((arr,curr) => arr + curr)
-  console.log(total);
+  const total = values.reduce((arr,curr) => arr + curr, 0)
   const subtotal = document.getElementById('subtotal-value');
-  subtotal.innerText = total;
+  subtotal.innerText =` ${total}`;
+  console.log(total);
 }
 
 
