@@ -111,7 +111,8 @@ const renderItemCart = ({thumbnail,title, price, id}) => {
   cart.appendChild(cartBox);
 
   countItens();
-  countPrice()
+  countPrice();
+  saveCart();
 }
 
 // remove itens no carrinho
@@ -120,7 +121,7 @@ const remEvent = (ev) => {
   const item = element.parentElement;
   item.remove();
   countItens();
-  countPrice()
+  countPrice();
 }
 
 // limpar carrrinho
@@ -132,6 +133,7 @@ const clearCart = () => {
     countItens();
     const total = document.getElementById('subtotal-value');
     total.innerText =` 0`;
+    localStorage.clear();
   });
 }
 
@@ -144,12 +146,22 @@ const countPrice = async () => {
   const total = values.reduce((arr,curr) => arr + curr, 0)
   const subtotal = document.getElementById('subtotal-value');
   subtotal.innerText =` ${total}`;
-  console.log(total);
 }
 
+// webstorage
+const saveCart = () => {
+  const itensCart = document.querySelectorAll('.itemCart');
+
+  const localS = [];
+
+  itensCart.forEach((element) => localS.push(element.id));
+
+  localStorage.setItem('item', JSON.stringify(localS));
+}
+
+// const loadCart = () => {
+
+// }
 
 
-window.onload = () => {
-  
-};
-
+// window.onload = loadCart;
