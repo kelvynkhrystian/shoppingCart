@@ -122,6 +122,7 @@ const remEvent = (ev) => {
   item.remove();
   countItens();
   countPrice();
+  saveCart();
 }
 
 // limpar carrrinho
@@ -151,17 +152,14 @@ const countPrice = async () => {
 // webstorage
 const saveCart = () => {
   const itensCart = document.querySelectorAll('.itemCart');
-
   const localS = [];
-
   itensCart.forEach((element) => localS.push(element.id));
-
   localStorage.setItem('item', JSON.stringify(localS));
 }
 
-// const loadCart = () => {
+const loadCart = () => {
 
-// }
+}
 
 
-// window.onload = loadCart;
+window.onload = loadCart;
