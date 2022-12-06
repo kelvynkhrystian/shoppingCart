@@ -10,8 +10,6 @@ const menu = () => {
   });
 }
 
-menu();
-
 // faz a requisição principal da api
 const getProducts = async () => {
   const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
@@ -19,8 +17,6 @@ const getProducts = async () => {
   const data = await result.json();
   ajustProducts(data);
 };
-
-getProducts();
 
 // recebe dados da api para redirecionar a informação de cada elemento para a renderização única na página
 const ajustProducts = (data) => {
@@ -138,8 +134,6 @@ const clearCart = () => {
   });
 }
 
-clearCart();
-
 const countPrice = async () => {
   const itens = document.querySelectorAll('.price');
   const values = [];
@@ -163,4 +157,4 @@ const loadCart = () => {
 }
 
 
-window.onload = loadCart;
+window.onload = menu,getProducts,clearCart,loadCart;
