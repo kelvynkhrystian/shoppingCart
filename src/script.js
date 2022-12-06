@@ -158,7 +158,8 @@ const saveCart = () => {
 }
 
 const loadCart = () => {
-
+  const listLS = JSON.parse(localStorage.getItem('item')) || {};
+  listLS.forEach((element) => getProductsById(element))
 }
 
 
