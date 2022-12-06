@@ -5,6 +5,7 @@ html,body {
 }
 
 body {
+  background-color: #e4e4e4;
   font-family: 'Solway', serif;
   display: flex;
   flex-direction: column;

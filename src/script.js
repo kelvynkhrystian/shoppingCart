@@ -10,6 +10,8 @@ const menu = () => {
   });
 }
 
+menu();
+
 // faz a requisição principal da api
 const getProducts = async () => {
   const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
@@ -156,5 +158,29 @@ const loadCart = () => {
   listLS.forEach((element) => getProductsById(element))
 }
 
+const loading = () => {
 
-window.onload = menu,getProducts,clearCart,loadCart;
+  const produtsBox = document.getElementById('produts-box');
+  const carregando = document.createElement('img');
+  carregando.className = 'loading';
+  carregando.src = './img/carregando.webp';
+  carregando.style.width = '100px';
+  produtsBox.appendChild(carregando);
+};
+
+const removeloading = () => {
+
+  const produtsBox = document.getElementById('produts-box');
+  const carregando = document.querySelector('.loading');
+  produtsBox.removeChild(carregando);
+};
+
+
+window.onload = async () => {
+
+  loading();
+  await getProducts();
+  removeloading();
+  clearCart();
+  loadCart();
+}
