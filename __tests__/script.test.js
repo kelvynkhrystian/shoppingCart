@@ -1,10 +1,14 @@
 /* eslint-disable no-undef */
 
+
+
+// const {menu} = require('../src/script.js');
+
 describe('1 - Listagem de Produtos', () => {
   it.todo('A função para requisitar existe');
   it.todo('Os produtos aparecem na tela');
   it ('Os produtos aparecem na tela', () => {
-    expect(typeof('a').to('function'))
+    expect(typeof(menu).to('function'))
   });
 })
 

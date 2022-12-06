@@ -136,6 +136,7 @@ const clearCart = () => {
   });
 }
 
+// contador do valor total dos itens do carrinho
 const countPrice = async () => {
   const itens = document.querySelectorAll('.price');
   const values = [];
@@ -146,18 +147,20 @@ const countPrice = async () => {
 }
 
 // webstorage
+// salvar itens do carrinho na localStorage
 const saveCart = () => {
   const itensCart = document.querySelectorAll('.itemCart');
   const localS = [];
   itensCart.forEach((element) => localS.push(element.id));
   localStorage.setItem('item', JSON.stringify(localS));
 }
-
+// carregar os itens do carrinho da localStorage
 const loadCart = () => {
   const listLS = JSON.parse(localStorage.getItem('item')) || {};
   listLS.forEach((element) => getProductsById(element))
 }
 
+// carrega um gif carregando enquanto a api não carrega
 const loading = () => {
 
   const produtsBox = document.getElementById('produts-box');
@@ -168,6 +171,7 @@ const loading = () => {
   produtsBox.appendChild(carregando);
 };
 
+// apagar o gif carregando
 const removeloading = () => {
 
   const produtsBox = document.getElementById('produts-box');
@@ -175,7 +179,7 @@ const removeloading = () => {
   produtsBox.removeChild(carregando);
 };
 
-
+// ao carregar a pagina, chamar as seguintes funções
 window.onload = async () => {
 
   loading();
@@ -183,4 +187,11 @@ window.onload = async () => {
   removeloading();
   clearCart();
   loadCart();
+}
+
+// exportar funções
+if (typeof module !== 'undefined') {
+  module.exports = {
+    // menu
+  };
 }
