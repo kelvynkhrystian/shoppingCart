@@ -1,8 +1,11 @@
 {
   "name": "shoppingcart",
   "version": "1.0.0",
-  "description": "Carrinho de Compras",
-  "main": "index.js",
+  "description": "carrinho de compras",
+  "main": "index.html",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -16,10 +19,5 @@
     "url": "https://github.com/kelvynkhrystian/shoppingCart/issues"
   },
   "homepage": "https://github.com/kelvynkhrystian/shoppingCart#readme",
-  "devDependencies": {
-    "eslint": "^8.28.0",
-    "eslint-config-trybe-fundamentals": "^1.1.1",
-    "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.3.1"
-  }
+  "keywords": []
 }

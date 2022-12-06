@@ -1,17 +1,3 @@
-// Menu retrátil
-const menu = () => {
-  const btnCart = document.getElementById('rigth-header');
-  const aside = document.getElementById('cart-box');
-  const article = document.getElementById('produts-box');
-
-  btnCart.addEventListener('click', () => {
-    aside.classList.toggle("oit");
-    article.classList.toggle("quin");
-  });
-}
-
-menu();
-
 // faz a requisição principal da api
 const getProducts = async () => {
   const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
@@ -192,6 +178,6 @@ window.onload = async () => {
 // exportar funções
 if (typeof module !== 'undefined') {
   module.exports = {
-    // menu
+    getProducts
   };
 }
