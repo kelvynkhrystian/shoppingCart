@@ -1,9 +1,4 @@
 /* eslint-disable no-undef */
-const { ok } = require('../src/script');
-
-it ('ok', () => {
-  expect(typeof ok).toBe('function');
-}) 
 
 describe('1 - Listagem de Produtos', () => {
   it.todo('A função para requisitar existe');
