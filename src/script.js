@@ -179,9 +179,9 @@ const removeloading = () => {
 };
 
 // ao carregar a pagina, chamar as seguintes funções
-window.onload = () => {
+window.onload = async () => {
   loading();
-  getProducts('computador');
+  await getProducts('computador');
   removeloading();
   clearCart();
   loadCart();
