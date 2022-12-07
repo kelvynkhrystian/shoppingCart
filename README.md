@@ -8,7 +8,7 @@ Funcionalidades do carrinho: Adicionar e remover produtos, remover todos os prod
 
 Focando no estudo de: Responsividade, Flexbox, Webstorage (localStorage), API ( Mercado Livre), Js Assíncrono (FetchAPI, Async, Await), Hofs, ...
 
-Manual API mercado livre: https://developers.mercadolivre.com.br/pt_br/itens-e-buscas
+Manual API mercado livre: <code> https://developers.mercadolivre.com.br/pt_br/itens-e-buscas </code>
 
 ### Tecnologias usadas no projeto:
 <div>
