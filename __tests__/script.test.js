@@ -1,12 +1,22 @@
 /* eslint-disable no-undef */
-const {getProducts} = require('../src/script.js');
+// const { getProducts, ajustProducts, getProductsById } = require('../src/fetch.js');
 
 describe('1 - Listagem de Produtos', () => {
   it.todo('A função para requisitar existe');
   it.todo('Os produtos aparecem na tela');
-  it ('Os produtos aparecem na tela', () => {
-    expect(typeof(getProducts).to('function'))
-  });
+
+  // it ('A função getProducts existe', () => {
+  //   console.log(menu);
+  //   expect(typeof(getProducts).to('function'))
+  // });
+  // it ('A função ajustProducts existe', () => {
+  //   console.log(menu);
+  //   expect(typeof(ajustProducts).to('function'))
+  // });
+  // it ('A função getProductsById existe', () => {
+  //   console.log(menu);
+  //   expect(typeof(getProductsById).to('function'))
+  // });
 })
 
 describe('2 - Adicione o item ao carrinho de compras', () => {

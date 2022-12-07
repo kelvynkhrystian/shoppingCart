@@ -20,7 +20,7 @@ const getProducts = async () => {
   ajustProducts(data);
 };
 
-// recebe dados da api para redirecionar a informação de cada elemento para a renderização única na página
+// recebe dados da api para redirecionar a informação para criação
 const ajustProducts = (data) => {
   const itens = data.results;
   itens.forEach(element => {
@@ -38,7 +38,6 @@ const createProducts = ({thumbnail,title, price, id}) => {
   const itemPrice = document.createElement('span')
   const itemBtn = document.createElement('button')
 
-
   itemImg.src = thumbnail;
   itemImg.alt = 'produtos';
   itemName.innerText = title.substring(0,100);
@@ -48,7 +47,6 @@ const createProducts = ({thumbnail,title, price, id}) => {
   itemBox.id = id;
   itemBtn.classList.add('itemBtn');
   itemBtn.onclick = addEvent;
-
   itemBox.appendChild(itemImg);
   itemBox.appendChild(itemName);
   itemBox.appendChild(itemPrice);
@@ -154,6 +152,7 @@ const saveCart = () => {
   itensCart.forEach((element) => localS.push(element.id));
   localStorage.setItem('item', JSON.stringify(localS));
 }
+// webstorage
 // carregar os itens do carrinho da localStorage
 const loadCart = () => {
   const listLS = JSON.parse(localStorage.getItem('item')) || {};
@@ -180,18 +179,10 @@ const removeloading = () => {
 };
 
 // ao carregar a pagina, chamar as seguintes funções
-window.onload = async () => {
-
+window.onload = () => {
   loading();
-  await getProducts();
+  getProducts('computador');
   removeloading();
   clearCart();
   loadCart();
-}
-
-// exportar funções
-if (typeof module !== 'undefined') {
-  module.exports = {
-    getProducts
-  };
 }
