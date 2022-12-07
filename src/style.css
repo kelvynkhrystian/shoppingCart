@@ -114,7 +114,7 @@ button:hover {
 }
 
 button:active {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 .quin {
@@ -219,6 +219,10 @@ button:active {
     border: 1px solid #15a874;
     color: #15a874;
     cursor: pointer;
+  }
+
+  button:active {
+    transform: scale(2);
   }
 
 }
