@@ -1,7 +1,14 @@
 # Carrinho de compras
+
 ### Um app simples que simula um carrinho de compras com suas funções básicas
+
 [Clique aqui](https://shopping-zeta-jade.vercel.app/) para acessar o app online!
+
 Funcionalidades do carrinho: Adicionar e remover produtos, remover todos os produtos, contador do número de itens no carrinho, contador do valor total dos itens do carrinho e ao atualizar/fechar a página, os itens continuam salvos!
+
+Focando no estudo de: Responsividade, Flexbox, Webstorage (localStorage), API ( Mercado Livre), Js Assíncrono (FetchAPI, Async, Await), Hofs, ...
+
+Manual API mercado livre: https://developers.mercadolivre.com.br/pt_br/itens-e-buscas
 
 ### Tecnologias usadas no projeto:
 <div>
