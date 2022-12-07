@@ -59,7 +59,7 @@ const countItens = () => {
   const totalAtual = document.getElementsByClassName('itemCart').length
   const countCard = document.getElementById('countCart');
   const atual = totalAtual;
-  countCard.innerHTML = `${atual}`
+  countCard.innerHTML = `${atual}`;
 }
 
 // captura o elemento clickado e redireciona para renderizar o item no carrinho
