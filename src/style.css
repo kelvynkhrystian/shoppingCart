@@ -108,14 +108,13 @@ button {
 }
 
 button:hover {
-  background-color: #1d1d22;
-  border: 1px solid #15a874;
-  color: #15a874;
-  cursor: pointer;
+  background-color: #15a874;
+  border: none;
+  color: #fff;
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(2);
 }
 
 .quin {
@@ -213,6 +212,13 @@ button:active {
   
   .oit {
     width: 30%;
+  }
+
+  button:hover {
+    background-color: #1d1d22;
+    border: 1px solid #15a874;
+    color: #15a874;
+    cursor: pointer;
   }
 
 }

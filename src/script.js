@@ -65,9 +65,6 @@ const countItens = () => {
 // captura o elemento clickado e redireciona para renderizar o item no carrinho
 const addEvent = (ev) => {
   const element = ev.target
-  element.style.animation = 'pulse 1s';
-  // const imgCart = document.getElementById('img-cart');
-  // imgCart.style.animation = 'pulse 0.5s repeat';
   const item = element.parentElement;
   getProductsById(item.id)
 }
