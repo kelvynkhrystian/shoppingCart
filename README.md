@@ -1,4 +1,4 @@
-# Carrinho de compras
+# Carrinho de compras - status: refatorando
 
 ### Um app simples que simula um carrinho de compras com suas funções básicas
 
