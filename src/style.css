@@ -175,6 +175,7 @@ button:active {
   color:#1d1d22;
   display: flex;
   font-size: small;
+  justify-content: space-between;
   height: 100px;
   margin-bottom: 10px;
   padding: 10px;

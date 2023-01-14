@@ -1,3 +1,5 @@
+import { getProducts } from "./fetchProducts";
+
 // Menu retrátil
 const menu = () => {
   const btnCart = document.getElementById('rigth-header');
@@ -13,12 +15,12 @@ const menu = () => {
 menu();
 
 // faz a requisição principal da api
-const getProducts = async () => {
-  const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
-  const result = await fetch(url);
-  const data = await result.json();
-  ajustProducts(data);
-};
+// const getProducts = async () => {
+//   const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
+//   const result = await fetch(url);
+//   const data = await result.json();
+//   return data;
+// };
 
 // recebe dados da api para redirecionar a informação para criação
 const ajustProducts = (data) => {
@@ -152,6 +154,7 @@ const saveCart = () => {
   itensCart.forEach((element) => localS.push(element.id));
   localStorage.setItem('item', JSON.stringify(localS));
 }
+
 // webstorage
 // carregar os itens do carrinho da localStorage
 const loadCart = () => {
@@ -170,7 +173,7 @@ const loading = () => {
   produtsBox.appendChild(carregando);
 };
 
-// apagar o gif carregando
+// remover o gif carregando
 const removeloading = () => {
 
   const produtsBox = document.getElementById('produts-box');
@@ -181,7 +184,7 @@ const removeloading = () => {
 // ao carregar a pagina, chamar as seguintes funções
 window.onload = async () => {
   loading();
-  await getProducts('computador');
+  ajustProducts( await getProducts('computador'));
   removeloading();
   clearCart();
   loadCart();
