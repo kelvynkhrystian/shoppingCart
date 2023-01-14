@@ -1,5 +1,3 @@
-import { getProducts } from "./fetchProducts";
-
 // Menu retrátil
 const menu = () => {
   const btnCart = document.getElementById('rigth-header');
@@ -15,12 +13,12 @@ const menu = () => {
 menu();
 
 // faz a requisição principal da api
-// const getProducts = async () => {
-//   const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
-//   const result = await fetch(url);
-//   const data = await result.json();
-//   return data;
-// };
+const getProducts = async () => {
+  const url = `https://api.mercadolibre.com/sites/MLB/search?q=computador`
+  const result = await fetch(url);
+  const data = await result.json();
+  ajustProducts(data);
+};
 
 // recebe dados da api para redirecionar a informação para criação
 const ajustProducts = (data) => {
@@ -184,7 +182,7 @@ const removeloading = () => {
 // ao carregar a pagina, chamar as seguintes funções
 window.onload = async () => {
   loading();
-  ajustProducts( await getProducts('computador'));
+  await getProducts();
   removeloading();
   clearCart();
   loadCart();
